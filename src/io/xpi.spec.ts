@@ -5,16 +5,16 @@ import { EventEmitter } from 'events';
 import yauzl, { Entry, ZipFile } from 'yauzl';
 import realSinon, { SinonSandbox, SinonStub } from 'sinon';
 
-import { DuplicateZipEntryError, InvalidZipFileError } from '../errors';
-import { Xpi } from './xpi';
-import { DEFLATE_COMPRESSION, NO_COMPRESSION } from './const';
+import { DuplicateZipEntryError, InvalidZipFileError } from '../errors.js';
+import { Xpi } from './xpi.js';
+import { DEFLATE_COMPRESSION, NO_COMPRESSION } from './constants.js';
 import {
   createFakeStderr,
   createFakeZipFile,
   readStringFromStream,
-} from '../test-helpers';
+} from '../test-helpers.js';
 
-describe(__filename, () => {
+describe('io/xpi', () => {
   const defaultData = {
     compressionMethod: DEFLATE_COMPRESSION,
   };
